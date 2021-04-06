@@ -17,12 +17,12 @@ const app = Vue.createApp({
 
                 const {results} = await res.json() //destructure result
 
-                
-                this.firstName = 'Anis',
-                this.lastName = 'Afiqah',
-                this.email = 'Anisafiqah@gmail.com',
-                this.gender = 'female',
-                this.picture = 'https://randomuser.me/api/portraits/women/11.jpg'
+
+                this.firstName =  results[0].name.first
+                this.lastName = results[0].name.last
+                this.email =  results[0].email
+                this.gender = results[0].gender
+                this.picture = results[0].picture.large
             },
         },
     })
